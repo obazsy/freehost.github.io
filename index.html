@@ -633,8 +633,17 @@ line-height: 1.6; /* Spacing for readability */
   z-index: 1000;
 }
 
+}.nav-link-mobile {
+  display: none;
 }
-
+@media (min-width: 769px) {
+  .nav-link-desktop {
+    display: block;
+  }
+  .nav-link-mobile {
+    display: none;
+  }
+}
 
 /* Add additional styles as necessary to match the appearance in your provided image */
 
@@ -652,6 +661,8 @@ line-height: 1.6; /* Spacing for readability */
 
 
   <header>
+
+    
     <div class="logo">
         <img src="logo.png" alt="Company Logo">
         <span class="logo-text">Prosperátor Informatikai Szolgáltató Kft.</span>
@@ -660,7 +671,8 @@ line-height: 1.6; /* Spacing for readability */
         <ul>
             <li><a href="#company" class="active">CÉGÜNK</a></li>
             <li><a href="#szolgáltatások">SZOLGÁLTATÁSOK</a></li>
-            <li><a href="#kapcsolatfelvétel">KAPCSOLATFELVÉTEL</a></li>
+            <li> <a href="#kapcsolatfelvetel" class="nav-link-desktop">Kapcsolatfelvétel</a>
+              <a href="#kapcsolatfelvetel" class="nav-link-mobile">Kapcsolat</a></li>
         </ul>
     </div>
     <div class="separator"></div>
@@ -773,7 +785,7 @@ line-height: 1.6; /* Spacing for readability */
 </div>
 
 
-    <div class="contact-container" id="kapcsolatfelvétel">
+    <div class="contact-container" id="kapcsolatfelvetel">
         <h2 id="contact-title">Kapcsolatfelvétel</h2>
         <div class="form-container">
             <form id="contact-form" action="https://formsubmit.co/orosz.balazs20041@gmail.com" method="POST">

@@ -1,3 +1,4 @@
+@media (max-width: 768px) {
 * {
     margin: 0;
     padding: 0;
@@ -18,6 +19,7 @@
   background: linear-gradient(to left, #ffffff 10%, rgb(150, 150, 150) 80%);
   color: white;
   padding: 20px 40px;
+  padding-left: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,25 +30,31 @@
   z-index: 1000;
   }
   .nav-bar{
-    font-size: large;
+    
+    font-size: 12px;
   }
   .logo img {
-    height: 50px;
+    height: 60px;
+    /* If there's any margin or padding pushing it to the right, reduce it here. */
   }
+  
   .logo {
     display: flex;
     align-items: center;
+    margin-left: 0; /* Adjust or add this to reduce space to the left edge if needed. */
   }
+  
+
+  
   .logo-text {
     color: var(--primary-color);
-    
-    margin-left: 20px;
-    font-size: 15px;
+    margin-left: 20px; /* Reduced from 50px to bring the text closer to the logo. */
+    font-size: 4px;
     font-weight: bold;
-    display: flex;
+    display: none;
     align-items: center;
-    
   }
+  
   .nav-bar ul {
     list-style: none;
     display: flex;
@@ -54,7 +62,7 @@
     margin: 0;
   }
   .nav-bar ul li {
-    margin-left: 40px;
+    margin-left: 10px;
   }
   .nav-bar ul li a {
     color: rgb(32, 32, 32);
@@ -66,14 +74,14 @@
   }
   .separator {
     position: absolute;
-    top: 100px;
+    top: 85px;
     left: 2.5%;
     width: 95%;
     background-color: var(--primary-color);
     height: 4px;
   }
   .container {
-    max-width: 1200px;
+    max-width: 768px;
     margin: 0 auto;
     padding: 20px;
     display: flex;
@@ -92,7 +100,7 @@
     margin-top: 90px;
     color: var(--primary-color);
     margin-bottom: 40px;
-    font-size: xxx-large;
+    font-size: xx-large;
   }
   
   .services-section {
@@ -135,134 +143,55 @@
   }
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  .container {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  @media (max-width: 768px) {
+    .nav-link-desktop {
+      display: none;
+    }
+    .nav-link-mobile {
+      display: block;
+    }
   }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
   
   .info-boxes {
-  display: flex;
-  justify-content: center; /* Align boxes to the center */
-  flex-wrap: wrap;
-  width: 100%;
-  position: relative; /* Context for absolute positioning */
-  }
-  
-  .spacer {
-  height: 30px; /* Adjust this value as needed to create more space */
-  flex-shrink: 0; /* Prevents the spacer from shrinking */
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    margin-top: 40px;
+    background-color: var(--secondary-color);
   }
   
   .info-box-wrapper {
-  position: absolute;
-  top: 0; /* Adjust if needed */
-  margin: 5px; /* Space between boxes */
-  width: calc(28% - 10px); /* 4 boxes, with 5px margin on each side */
-  box-sizing: border-box;
+    width: 100%; /* Ensure each wrapper takes full width */
   }
-  
-  /* Assigning each box a left position based on its order */
-  .info-box-wrapper:nth-of-type(1) { left: calc(0% - 8.5%); }
-  .info-box-wrapper:nth-of-type(2) { left: calc(21.5%); }
-  .info-box-wrapper:nth-of-type(3) { left: calc(51.5%); }
-  .info-box-wrapper:nth-of-type(4) { left: calc(81%); }
   
   .info-box {
-  padding: 20px;
-  background-color: #fff;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
-  border-top: 7px solid var(--primary-color);
-  transition: max-height 0.5s ease-in-out;
-  min-height: 150px;
-  max-height: 150px;
-  overflow: hidden;
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* Ensures content is centered */
-  align-items: center; /* Keeps content horizontally centered */
-  height: auto; /* Allows box to grow with content */
-  width: 100%; /* Full width of the .info-box-wrapper */
+    margin: 10px 0; /* Adjusted for vertical margin */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-top: 7px solid var(--primary-color);
   }
   
-  .spacer {
-  height: 20px; /* Adjust this height to increase/decrease space between h3 and paragraph */
-  width: 100%; /* Ensures the spacer takes the full width but doesn't affect centering of h3 */
-  }
-  
-  .info-box h3, .info-box p {
-  color: #333;
-  text-align: center;
-  margin: 0; /* Ensures the h3 and p are not offset by default margins */
-  }
-  
-  .info-box h3 {
-  margin-top: 18%;
-  margin-bottom: 15%;
-  font-size: 1.5em; /* Ensures h3 size is maintained */
-  }
-  
-  .info-box p {
-  transition: opacity 0.5s, max-height 0.5s ease-in-out;
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  width: 100%; /* Ensures paragraph alignment */
-  font-size: larger;
-  }
-  
-  .info-box:hover {
-  max-height: 1000px; /* Large enough to fit content */
-  }
-  
-  .info-box:hover p {
-  max-height: 100%; /* Ensures text fits within the box */
-  opacity: 1; /* Makes text visible on hover */
-  }
-  
-  
-  .info-box:hover {
-  max-height: 1000px; /* Large enough to fit content */
-  }
-  
-  .info-box:hover p {
-  max-height: 100%; /* Ensures text fits within the box */
-  opacity: 1; /* Make text visible */
-  }
-  
-  
-  @media (max-width: 768px) {
-  .info-boxes {
-      flex-direction: column;
-  }
-  
-  .info-box-wrapper {
-      width: 100%;
-  }
-  }
   
   
   
@@ -328,12 +257,12 @@
   flex-direction: column; /* Aligns children vertically */
   justify-content: center; /* Centers items vertically in the box */
   align-items: center; /* Centers items horizontally in the box */
-  width: 40%; /* Set the desired width for the boxes */
+  width: 20%; /* Set the desired width for the boxes */
   margin: 10px 0; /* Add margin above and below each box */
   padding: 20px;
   background-color: #fff; /* White background */
   line-height: 120%;
-  font-size: 180%;
+  font-size: 140%;
   margin-bottom: 3%;
   margin-top: 3%;
   font-weight: bold;
@@ -345,21 +274,25 @@
   }
   
   .service-box2 {
+    padding: 20px 10px 20px 20px;
   display: flex; /* Keeps the container as flexbox */
   flex-direction: column; /* Keeps children aligned vertically */
   justify-content: center; /* Centers items vertically in the box */
   align-items: flex-end; /* Aligns items to the right */
-  width: 40%; /* Set the desired width for the boxes */
+  width: 90%; /* Set the desired width for the boxes */
   margin: 10px 0; /* Add margin above and below each box */
   padding: 20px;
   background-color: #fff; /* White background */
   line-height: 160%;
-  font-size: 180%;
-  
+  font-size: 135%;
+  margin-left: auto;
+  margin-right: 0;
   font-weight: bold;
   letter-spacing: 0.004em;
   border-right: 8px solid var(--primary-color); /* Right border for style */
-  }
+  text-align: left;
+
+}
   
   
   .service-box h2 {
@@ -415,10 +348,10 @@
   }
   
   #contact-title {
-  margin-top: 23%;
+  margin-top: 15%;
   
-  margin-bottom: 8%; /* Adjust the space between title and form */
-  font-size: xxx-large; /* Adjust the font size as needed */
+  margin-bottom: 20%; /* Adjust the space between title and form */
+  font-size: xx-large; /* Adjust the font size as needed */
   color: #8d6800; /* Primary color */
   letter-spacing: 0.01em; /* Adds space between characters */
   }
@@ -535,12 +468,12 @@
   }
   
   .logoright {
-  top: 103%;
+  top: 117%;
   transform: translateX(200%); /* Start completely outside to the right */
   }
   
   .logoleft {
-  top: 170%;
+  top: 243%;
   transform: translateX(-200%); /* Start completely outside to the left */
   }
   
@@ -624,4 +557,4 @@
   }
   
   
-  
+}

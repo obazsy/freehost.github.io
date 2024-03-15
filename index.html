@@ -1,0 +1,831 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Interactive Words</title>
+<style>
+@media (min-width: 1025px) {
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+  body {
+      padding-top: 150px;
+      font-family: 'Times New Roman', Times, serif;
+      color: #333;
+      background-color: #ffffff;
+      overflow-x: hidden;
+  }
+  :root {
+      --primary-color: #8d6800;
+      --secondary-color: #ffffff;
+  }
+  header {
+background: linear-gradient(to left, #ffffff 10%, rgb(150, 150, 150) 80%);
+color: white;
+padding: 20px 40px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+z-index: 1000;
+}
+  .nav-bar{
+      font-size: larger;
+  }
+  .logo img {
+      height: 80px;
+  }
+  .logo {
+      display: flex;
+      align-items: center;
+  }
+  .logo-text {
+      color: var(--primary-color);
+      
+      margin-left: 20px;
+      font-size: 30px;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      
+  }
+  .nav-bar ul {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      margin: 0;
+  }
+  .nav-bar ul li {
+      margin-left: 50px;
+  }
+  .nav-bar ul li a {
+      color: rgb(32, 32, 32);
+      text-decoration: none;
+      font-weight: bold;
+  }
+  .nav-bar ul li a:hover, .nav-bar ul li a.active {
+      color: var(--primary-color);
+  }
+  .separator {
+      position: absolute;
+      top: 100px;
+      left: 2.5%;
+      width: 95%;
+      background-color: var(--primary-color);
+      height: 4px;
+  }
+  .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+  }
+  .content h2 {
+      margin-top: 90px;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+      
+      
+  }
+  .container h2 {
+      margin-top: 90px;
+      color: var(--primary-color);
+      margin-bottom: 40px;
+      font-size: xxx-large;
+  }
+
+  .services-section {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 40px 0;
+  }
+  .services-logo {
+flex-basis: 25%;
+
+margin-left: 1%;
+width: 15vw; /* Logo width relative to the viewport width */
+max-height: 25vw; /* Logo height scales with the viewport width */
+}
+
+  .text-section {
+      color: rgb(32, 32, 32);
+      font-size: xxx-large;
+      font-weight: bold;
+      flex-basis: 56%;
+      padding: 0 20px;
+      line-height: 100%;
+      
+  }
+  .text-section p {
+margin-bottom: 40px; /* Increase the bottom margin to separate paragraphs */
+/* Other styles like color, font-size, etc., if necessary */
+}
+  .picture-right {
+      flex-basis: 25%;
+
+width: 15vw; /* Logo width relative to the viewport width */
+max-height: 40vw; /* Logo height scales with the viewport width */
+      width: 10%;
+
+      margin-left: 2%;
+      margin-right: 10%;
+  }
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+.container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.info-boxes {
+    display: flex;
+    justify-content: center; /* Align boxes to the center */
+    flex-wrap: wrap;
+    width: 100%;
+    position: relative; /* Context for absolute positioning */
+}
+
+.spacer {
+    height: 30px; /* Adjust this value as needed to create more space */
+    flex-shrink: 0; /* Prevents the spacer from shrinking */
+}
+
+.info-box-wrapper {
+    position: absolute;
+    top: 0; /* Adjust if needed */
+    margin: 5px; /* Space between boxes */
+    width: calc(30% - 10px); /* 4 boxes, with 5px margin on each side */
+    box-sizing: border-box;
+}
+
+/* Assigning each box a left position based on its order */
+.info-box-wrapper:nth-of-type(1) { left: calc(0% - 20%); }
+.info-box-wrapper:nth-of-type(2) { left: calc(17%); }
+.info-box-wrapper:nth-of-type(3) { left: calc(53%); }
+.info-box-wrapper:nth-of-type(4) { left: calc(90%); }
+
+.info-box {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-top: 7px solid var(--primary-color);
+    transition: max-height 0.5s ease-in-out;
+    min-height: 150px;
+    max-height: 150px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* Ensures content is centered */
+    align-items: center; /* Keeps content horizontally centered */
+    height: auto; /* Allows box to grow with content */
+    width: 100%; /* Full width of the .info-box-wrapper */
+}
+
+.spacer {
+    height: 20px; /* Adjust this height to increase/decrease space between h3 and paragraph */
+    width: 100%; /* Ensures the spacer takes the full width but doesn't affect centering of h3 */
+}
+
+.info-box h3, .info-box p {
+    color: #333;
+    text-align: center;
+    margin: 0; /* Ensures the h3 and p are not offset by default margins */
+}
+
+.info-box h3 {
+    margin-top: 18%;
+    margin-bottom: 15%;
+    font-size: 1.5em; /* Ensures h3 size is maintained */
+}
+
+.info-box p {
+    transition: opacity 0.5s, max-height 0.5s ease-in-out;
+    max-height: 0;
+    opacity: 0;
+    overflow: hidden;
+    width: 100%; /* Ensures paragraph alignment */
+    font-size: larger;
+}
+
+.info-box:hover {
+    max-height: 1000px; /* Large enough to fit content */
+}
+
+.info-box:hover p {
+    max-height: 100%; /* Ensures text fits within the box */
+    opacity: 1; /* Makes text visible on hover */
+}
+
+
+.info-box:hover {
+    max-height: 1000px; /* Large enough to fit content */
+}
+
+.info-box:hover p {
+    max-height: 100%; /* Ensures text fits within the box */
+    opacity: 1; /* Make text visible */
+}
+
+
+@media (max-width: 768px) {
+    .info-boxes {
+        flex-direction: column;
+    }
+
+    .info-box-wrapper {
+        width: 100%;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+  footer {
+      background-color: var(--secondary-color);
+      color: white;
+      text-align: center;
+      padding: 20px 0;
+  }
+  @media (max-width: 768px) {
+      .services-section {
+          flex-direction: column;
+      }
+      .services-logo, .text-section, .picture-right {
+          
+          flex-basis: 100%;
+          margin: 10px 0;
+      }
+  }
+  .introduction-section {
+display: flex; /* Use flexbox for layout */
+align-items: center; /* Center items vertically */
+justify-content: space-around; /* Space out the items */
+padding: 40px 0; /* Add padding */
+}
+
+.introduction-section2 {
+display: flex; /* Use flexbox for layout */
+align-items: center; /* Center items vertically */
+justify-content: space-around; /* Space out the items */
+margin-bottom: 20px;
+}
+
+.introduction-section .left-image,
+.introduction-section .right-image {
+flex-basis: 20%; /* Take up 20% of the flex container */
+text-align: center; /* Center the images if they are smaller than the flex-basis */
+}
+
+.introduction-section .content {
+flex-basis: 60%; /* Take up 60% of the flex container */
+padding: 0 20px; /* Add some padding on the sides */
+}
+.service-container {
+display: flex;
+flex-direction: column;
+align-items: center; /* Centers the boxes horizontally */
+justify-content: center; /* Centers the boxes vertically if there's enough vertical space */
+margin-top: 0px;
+}
+
+.service-box {
+  display: flex; /* Makes the container a flexbox */
+  flex-direction: column; /* Aligns children vertically */
+  justify-content: center; /* Centers items vertically in the box */
+  align-items: center; /* Centers items horizontally in the box */
+  width: 40%; /* Set the desired width for the boxes */
+  margin: 10px 0; /* Add margin above and below each box */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  line-height: 120%;
+  font-size: 180%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  font-weight: bold;
+  
+}
+
+.service-box {
+  border-left: 8px solid var(--primary-color); /* Left border for style */
+}
+
+.service-box2 {
+  display: flex; /* Keeps the container as flexbox */
+  flex-direction: column; /* Keeps children aligned vertically */
+  justify-content: center; /* Centers items vertically in the box */
+  align-items: flex-end; /* Aligns items to the right */
+  width: 40%; /* Set the desired width for the boxes */
+  margin: 10px 0; /* Add margin above and below each box */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  line-height: 160%;
+  font-size: 180%;
+
+  font-weight: bold;
+  letter-spacing: 0.004em;
+  border-right: 8px solid var(--primary-color); /* Right border for style */
+}
+
+
+.service-box h2 {
+margin-bottom: 15px; /* Space below the heading */
+color: var(--primary-color); /* Primary theme color for headings */
+font-size: 1.25em; /* Slightly larger font size for the heading */
+}
+
+.service-box p {
+color: #333; /* Dark color for text */
+line-height: 1.6; /* Spacing for readability */
+}
+
+@media (max-width: 768px) {
+.service-box {
+  width: 95%; /* Adjust width for smaller screens */
+}
+}
+
+
+.services-section {
+  position: relative;
+  z-index: 2; /* Ensures content is above the words */
+  /* Ensure this container has dimensions */
+  min-height: 400px; /* Example height, adjust as needed */
+}
+
+#wordContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Below .services-section content but above background */
+}
+
+.word {
+  position: absolute;
+  opacity: 0; /* Initially hidden, shown via JS */
+  transition: opacity 0.05s ease-in-out;
+  color: #e49c00; /* Make sure this is visible against your background */
+  font-size: 20px; /* Example size, adjust as needed */
+  font-variant: small-caps;
+}
+.color1 {
+  color: #4d4d4d; /* Example color, adjust as needed */
+}
+
+.color2 {
+  color: #8d6800; /* Example color, adjust as needed */
+}
+.contact-container {
+  text-align: center;
+  padding: 20px;
+}
+
+#contact-title {
+  margin-top: 23%;
+  
+  margin-bottom: 8%; /* Adjust the space between title and form */
+  font-size: xxx-large; /* Adjust the font size as needed */
+  color: #8d6800; /* Primary color */
+  letter-spacing: 0.01em; /* Adds space between characters */
+}
+
+
+.form-container {
+  display: flex;
+  justify-content: space-evenly; /* Distributes space evenly around items */
+  align-items: flex-start; /* Aligns items to the start of the container */
+  flex-wrap: wrap; /* Allows the items to wrap onto the next line if needed */
+}
+
+.image-container {
+  flex-basis: 18%; /* Takes up the specified width */
+  display: flex;
+  flex-direction: column; /* Stack the image and caption vertically */
+  align-items: center; /* Center the items horizontally */
+}
+
+.picture-right {
+  width: 100%; /* The image will take up the full width of the .image-container */
+  height: auto; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between the image and caption */
+}
+
+.image-caption {
+  text-align: center; /* Centers the caption text */
+  font-size: 18px; /* Example font size, adjust as needed */
+  color: #333; /* Example text color, adjust as needed */
+}
+
+
+#contact-form {
+  width: 100%;
+  max-width: 35%; /* Set a max-width for the form if you want it wider */
+}
+
+#company-section {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically in the container */
+  align-items: center; /* Center horizontally in the container */
+
+  text-align: center; /* Ensure text aligns center */
+}
+
+#company-title {
+  
+  margin-top: 10%;
+  font-size: xxx-large; /* Large font size for emphasis */
+  color: #8d6800; /* Theme color for the text */
+  letter-spacing: 0.1em; /* Space between characters */
+}
+
+
+.input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+}
+
+.input-group input,
+.input-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 50px;
+  
+  margin-bottom: 5px; /* Adds space between inputs */
+}
+
+.input-group textarea {
+  height: auto; /* Reset height for textarea */
+  min-height: 150px;
+  resize: vertical;
+}
+
+#submit {
+  background-color: white;
+  color: #8d6800;
+  border: 2px solid #8d6800;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+#submit:hover {
+  background-color: #8d6800;
+  color: white;
+}
+
+
+/* Adjust the max-width for responsiveness */
+@media (max-width: 768px) {
+  .form-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  #contact-form {
+    max-width: none;
+  }
+}
+
+
+/* Initial state: just outside the viewport */
+.logoright, .logoleft {
+  position: absolute;
+  width: 30%;
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+  opacity: 0; /* Initially invisible for a smoother entry */
+}
+
+.logoright {
+  top: 103%;
+  transform: translateX(200%); /* Start completely outside to the right */
+}
+
+.logoleft {
+  top: 170%;
+  transform: translateX(-200%); /* Start completely outside to the left */
+}
+
+/* Adjusted target state: partially visible */
+.logoright.in-view {
+  opacity: 1;
+  transform: translateX(160%); /* Adjust to control how far it comes into the screen */
+}
+
+.logoleft.in-view {
+  opacity: 1;
+  transform: translateX(-150%); /* Adjust to control how far it comes into the screen */
+}
+
+
+
+
+
+.container {
+  display: flex;
+  justify-content: center; /* This will horizontally center all direct children */
+  align-items: center; /* This will vertically center all direct children */
+  flex-direction: column; /* This will stack children vertically */
+  text-align: center; /* This ensures the text within the container is centered */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+#company {
+  width: 100%; /* Ensures the .service-container takes full width of its container */
+}
+#company {
+  scroll-margin-top: 150px; /* This value should match or exceed your fixed header's height */
+  /* ... other styles ... */
+}
+
+
+
+#company, #szolgáltatások {
+  /* These IDs should be on the section containers */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -100px; /* Height of fixed header */
+  padding-top: 100px; /* Height of fixed header */
+}
+
+/* Any additional specific styles for these sections */
+
+#container {
+  scroll-margin-top: 150px; /* This value should match or exceed your fixed header's height */
+  /* ... other styles ... */
+}
+
+
+#company-title {
+  /* Centering the title within #company */
+  margin: 0;
+  padding-top: 20px;
+  font-size: xxx-large;
+  color: var(--primary-color);
+  text-align: center; /* Ensures the title is centered */
+  letter-spacing: 0.1em; /* Adjust as needed */
+}
+
+
+.popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+}
+
+
+/* Add additional styles as necessary to match the appearance in your provided image */
+
+</style>
+<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="stylephone.css">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://use.typekit.net/your-kit-id.css">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Lato:wght@400;700&family=Montserrat:wght@400;700&family=Source+Sans+Pro:wght@400;700&family=Poppins:wght@400;700&family=Noto+Sans:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+ 
+
+
+  <header>
+    <div class="logo">
+        <img src="logo.png" alt="Company Logo">
+        <span class="logo-text">Prosperátor Informatikai Szolgáltató Kft.</span>
+    </div>
+    <div class="nav-bar">
+        <ul>
+            <li><a href="#company" class="active">CÉGÜNK</a></li>
+            <li><a href="#szolgáltatások">SZOLGÁLTATÁSOK</a></li>
+            <li><a href="#kapcsolatfelvétel">KAPCSOLATFELVÉTEL</a></li>
+        </ul>
+    </div>
+    <div class="separator"></div>
+</header>
+
+<main>
+  <div id="wordContainer">
+    <span class="word color1" style="top: 70%; left: 10%;">adatbiztonság</span>
+    <span class="word color2" style="top: 30%; left: 20%;">integráció</span>
+    <span class="word color1" style="top: 8%; left: 30%;">rendelkezésre állás</span>
+    <span class="word color1" style="top: 55%; left: 80%;">tervezés</span>
+    <span class="word color2" style="top: 45%; left: 20%;">auditálás</span>
+    <span class="word color2" style="top: 68%; left: 68%;">szabályzatok</span>
+    <span class="word color1" style="top: 40%; left: 75%;">monitoring</span>
+    <span class="word color2" style="top: 50%; left: 10%;">adatmentés</span>
+    <span class="word color1" style="top: 65%; left: 85%;">titkosítás</span>
+    <span class="word color1" style="top: 10%; left: 50%;">hitelesítés</span>
+    <span class="word color2" style="top: 20%; left: 32%;">jogosultságkezelés</span>
+    <span class="word color2" style="top: 30%; left: 65%;">informatikai biztonság</span>
+    <span class="word color1" style="top: 55%; left: 24%;">hálózatbiztonság</span>
+    <span class="word color2" style="top: 20%; left: 80%;">kommunikáció</span>
+    <span class="word color1" style="top: 20%; left: 5%;">mobilvédelem</span>
+  </div>
+  <script src="script.js"></script>
+  
+  <div class="services-section">       
+
+    <img src="logo_s.png" alt="Company Logo" class="services-logo">
+  </div>
+</main>
+
+<!-- Ensure the ID is on the section element you want to target -->
+<div class="container" id="company">
+    <h3 id="company-title">Cégünk</h3>
+    <!-- ... -->
+</div>
+
+<script src="script.js"></script>
+
+
+<div class="service-container">
+    <div class="service-box">
+        
+        <p>Cégünk évek óta részt vállal az ország legnagyobb és legbiztonságosabb informatikai
+            hálózatain végzett IT biztonsági projektek szigorúan szakmai megvalósításában. E munkák
+            során széleskörű tapasztalatokra, rendszerszemléletre és felhalmozott tudásbázisra tettünk
+            szert az informatikai biztonság minden témakörében.</p>
+    
+        </div>
+        <img src="logo_s.png" alt="Company Logo" class="logoright in-view">
+    <div class="service-box2">
+        <p style="text-align: right; width: 100%;">IT biztonsággal kapcsolatos projektjeink
+            jelentős hányadát alvállalkozóként végezzük. Ügyfeleink így a legnagyobb magyarországi
+            rendszerintegrátor és tanácsadó cégek, melyek legtöbbjével évek óta működünk együtt.
+            Cégünk így kereskedelmi tevékenység helyett szinte mindig kizárólag a szakmai kérdésekre
+            tudta helyezni a hangsúlyt.</p>
+        
+    </div>
+    <img src="logo_s.png" alt="Company Logo" class="logoleft in-view">
+    <div class="service-box">
+        
+        <p>Célunk a mindenkori környezethez és elvárásokhoz igazodó optimális megoldás szállítása.
+            Fontosnak tartjuk, hogy ügyfeleink számára „észrevehetetlen” szolgáltatást nyújtsunk a
+            probléma megelőzésben és valós, megbízható, gyors segítséget az esetleges hibakezelésben.</p>
+    </div>
+</div>
+
+    
+    
+
+<div class="introduction-section" id="szolgáltatások">
+    <div class="container">
+        <h2>Szolgáltatások</h2>
+        </div>
+</div>
+<div class="container">
+    <div class="info-boxes">
+        <div class="info-box-wrapper">
+            <div class="info-box info-box1">
+                <h3>Informatikai biztonsággal összefüggő szolgáltatásaink</h3>
+                <div class="spacer"></div>
+                <p>A Prosperátor Kft. a több évtizedes tapasztalatával képes átlátni és átalakítani a kaotikus, összetett informatikai rendszereket, hogy azok biztonságosabbá, nyomonkövethetőbbé és erőforrás-hatékonyabbá váljanak, miközben az informatikai biztonság minden fontos aspektusát lefedik, különböző üzleti és államigazgatási környezetekben.</p>
+            </div>
+        </div>
+        <div class="info-box-wrapper">
+            <div class="info-box info-box2">
+                <h3>Rendszerintegrációs szolgáltatásaink</h3>
+                <div class="spacer"></div>
+                <p>A rendszerintegrációs projektek során célunk, hogy a nagyvállalati tapasztalatainkat felhasználva egységes, könnyen kezelhető és jól dokumentált IT környezetet hozzunk létre ügyfeleink számára, mely integrálja az új és meglévő rendszereket. Az előzetes tervezés kiemelt figyelmet kap, hogy optimális megoldásokkal támogassuk a beruházásokat az előkészítéstől a proaktív üzemeltetésig.</p>
+            </div>
+        </div>
+        <div class="info-box-wrapper">
+            <div class="info-box info-box3">
+                <h3>Alkalmazás gateway fejlesztés</h3>
+                <div class="spacer"></div>
+                <p>Nagyvállalati környezetben sokszor előfordul, hogy egymás mellett működő rendszerek
+                    esetében biztosítani kell ezek számára rugalmas, moduláris és könnyen módosítható
+                    kommunikációs felületeket. Megoldásunk, a fenti kritérimuknak megfelelve, képes
+                    kommunikációs interfészt biztosítani egyszerre több, függetlenül fejlesztett alkalmazás között.</p>
+            </div>
+        </div>
+        <div class="info-box-wrapper">
+            <div class="info-box info-box3">
+                <h3>Informatikai biztonsági felülvizsgálatok</h3>
+                <div class="spacer"></div>
+                <p>Biztonsági auditok keretében felmérjük, hogy informatikai biztonsági szempontból a Megrendelő jelenlegi informatikai megoldásai mennyiben állják meg a helyüket, és milyen egyéb kiegészítések, vagy módosítások szükségesek ahhoz, hogy a rendszer integritása ne sérüljön a megfelelõ biztonsági kívánalmak hiánya miatt. A hálózatok korában nincs független elem, minden mindennel kapcsolódik.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+    <div class="contact-container" id="kapcsolatfelvétel">
+        <h2 id="contact-title">Kapcsolatfelvétel</h2>
+        <div class="form-container">
+            <form id="contact-form" action="https://formsubmit.co/orosz.balazs20041@gmail.com" method="POST">
+                <div class="input-group">
+                    <input type="text" id="firstname" name="firstname" required placeholder="Keresztnév">
+                    <input type="text" id="lastname" name="lastname" required placeholder="Vezetéknév">
+                </div>
+                <div class="input-group">
+                    <input type="email" id="email" name="email" required placeholder="Email Cím">
+                </div>
+                <div class="input-group">
+                    <input type="text" id="subject" name="subject" required placeholder="Tárgy">
+                </div>
+                <div class="input-group">
+                    <textarea id="message" name="message" required placeholder="Üzenet"></textarea>
+                </div>
+                <!-- Hidden Input for FormSubmit service -->
+                <input type="hidden" name="_next" value="https://yourwebsite.com/thankyou.html">
+                <input type="text" name="_honey" style="display:none;">
+                <input type="hidden" name="_captcha" value="false">
+                <!-- Replace 'YOUREMAILADDRESS' with your email address -->
+                <input type="hidden" name="_to" value="orosz.balazs20041@gmail.com">
+                <button type="submit" id="submit">KÜLDÉS</button>
+            </form>
+            <div class="image-container">
+                <img src="zsolt.jpg" alt="Horváth Zsolt" class="picture-right">
+                <div class="image-caption">Horváth Zsolt Ügyvezető Tulajdonos</div>
+            </div>
+
+            
+            <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  const urlParams = new URLSearchParams(window.location.search);
+                  const success = urlParams.get('success');
+                  if (success) {
+                    alert("Your message has been sent successfully!");
+                  }
+                });
+                </script>
+        </div>
+        
+    </div>
+    
+    
+
+
+<footer>
+    <!-- Footer content -->
+</footer>
+
+
+
+
+</body>
+</html>

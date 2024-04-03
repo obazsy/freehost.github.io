@@ -1,0 +1,366 @@
+
+body, h1, p, button {
+    margin: 0;
+    padding: 0;
+    font-family: 'Your preferred font', sans-serif;
+}
+
+.hero {
+    
+    background-image: url('stretch.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+    color: white;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: linear-gradient(to top, rgba(160, 61, 173, 0.7), rgba(255,0,0,0));
+    z-index: 0;
+}
+
+.hero-inner {
+    position: relative;
+    padding: 100px;
+    text-align: center;
+    z-index: 1;
+}
+
+h1 {
+    font-size: 2.5em; /* Large text */
+    margin-bottom: 0.5em;
+}
+
+p {
+    font-size: 1.5em; /* Smaller text than h1 */
+    margin-bottom: 1em;
+}
+
+button {
+    margin-top: 50px;
+    background-color: #7f5a91;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 1.5em;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #6a009b;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding-top: 60px; /* Adjust based on your navbar's height */
+    background-color: rgb(255, 243, 255); /* Light purple background */
+    margin: 0; /* Removes default margin */
+}
+
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: linear-gradient(to left, rgb(210,183,227) 0%, rgb(255, 231, 255) 100%);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 20px;
+    height: 9%;
+}
+
+.nav-links {
+    margin-right: 80px; /* Adjust the right margin to increase distance from the right edge */
+}
+
+.nav-links a {
+    font-variant: ca;
+    font-size: larger;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    margin: 0 25px; /* This keeps the gap between the links the same */
+}
+
+.nav-links a:last-child {
+    margin-right: 0; /* Removes the extra margin for the last link if needed */
+}
+
+.nav-links a:hover {
+    color: rgb(248, 207, 241);
+}
+
+.logo {
+    margin-left: 40px;
+    color: rgb(0, 0, 0);
+    font-size: 24px;
+}
+
+.logo img {
+    margin-left: 100px;
+    height: auto; /* Maintain aspect ratio */
+    width: 110px; /* Example size, adjust as needed */
+}
+
+
+/* Style adjustments for dropdown */
+.navbar .dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.navbar .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Light background for the dropdown items */
+    min-width: 160px; /* Minimum width of the dropdown */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a shadow for depth */
+    z-index: 1;
+}
+
+.navbar .dropdown-content a {
+    color: black; /* Text color */
+    padding: 12px 16px;
+    text-decoration: none; /* No underline by default */
+    display: block;
+    text-align: left;
+}
+
+.navbar .dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.navbar .dropdown-content a:hover {
+    color: rgb(210,183,227); /* Darker color for the text on hover */
+    background-color: transparent; /* Keeps the background unchanged */
+    text-decoration: underline; /* Adds an underline to highlight the text */
+}
+
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr; /* One column layout */
+    gap: 30px; /* Space between rows */
+    margin: 0 auto; /* Center the grid container if needed */
+    max-width: 90%; /* Adjust based on your design */
+    padding: 40px 0; /* Padding at the top and bottom */
+}
+
+/* General content section styles */
+.content-section {
+    height: 500px;
+    display: flex;
+    align-items: stretch; /* This will make children stretch to the height of the tallest one */
+    justify-content: center;
+    margin: 40px 10%; /* Adjusts overall section margin */
+    flex-wrap: wrap; /* Allows items to wrap in smaller viewports */
+    gap: 20px; /* Adds space between the image and text */
+}
+.content-section:nth-child(odd)::before {
+    background: linear-gradient(to left, rgba(210,183,227, 0.5), transparent);
+}
+
+/* Different gradient for even numbered sections */
+.content-section:nth-child(even)::before {
+    background: linear-gradient(to right, rgba(210,183,227, 0.5), transparent);
+}
+
+/* Visibility and animation styles */
+.content-section {
+    opacity: 0;
+    transform: translateX(-10%);
+    transition: all 1s ease-out;
+}
+
+.content-section.even {
+    transform: translateX(10%);
+}
+
+.content-section.in-view {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+/* Content image styles */
+.content-section .content-image {
+    flex: 1; /* Allows items to grow and shrink as needed */
+    min-width: 500px; /* Sets a maximum width */
+    text-align: center; /* Centers text within its container */
+    display: flex;
+    justify-content: center; /* Centers the content-image and content-text themselves */
+    align-items: center;
+}
+
+/* Content text styles */
+.content-section .content-text {
+    flex: 1; /* Allows the container to grow and shrink as needed */
+    max-width: 45%; /* Sets a maximum width for the container */
+    display: flex; /* Enables the use of Flexbox for layout */
+    flex-direction: column; /* Stacks flex items vertically */
+    justify-content: center; /* Centers the flex items along the main axis */
+    align-items: center; /* Centers the flex items along the cross axis */
+    text-align: center; /* Ensures text within the container is centered */
+}
+
+/* Header styles within content text */
+.content-section .content-text h2 {
+    font-variant: small-caps;
+    font-display: 100;
+    font-size: 24px; /* Example size, adjust as needed */
+    color: #1d1d1d; /* Dark grey, adjust the color as needed */
+    margin-bottom: 20px; /* Adds space below the h2 heading */
+}
+
+/* Paragraph styles within content text */
+.content-section .content-text p {
+    margin-bottom: 40px;
+    font-size: 16px; /* Example size, adjust as needed */
+    color: #464646; /* Lighter grey, adjust the color as needed */
+    line-height: 1.6; /* Adjusts the line height for readability */
+}
+
+/* Gradient overlay for content section */
+.content-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: linear-gradient(to right, rgba(210,183,227, 0.5), transparent);
+    z-index: 1;
+}
+
+/* Image styles */
+.content-image img {
+    max-width: 300px; /* Sets a specific size for images */
+    height: auto; /* Maintains aspect ratio */
+    object-fit: cover; /* Ensures the image covers the area nicely */
+    margin: 0 auto; /* Centers images within the content-image div */
+}
+
+/* Additional layout styles */
+.content-section.image-left {
+    flex-direction: row-reverse;
+}
+
+/* Button styling */
+.cta-button {
+    padding: 10px 20px;
+    background-color: #6F2888; /* Example button color */
+    color: white; /* Text color */
+    border: none;
+    cursor: pointer;
+    z-index: 3;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background-color */
+    border-radius: 5px; /* Optional: adds rounded corners to the button */
+}
+
+.cta-button:hover {
+    background-color: #6F2888; /* Darker shade for hover effect */
+    transform: scale(1.15); /* Slightly increase the button size */
+}
+
+
+
+.container {
+    display: flex; /* Use flexbox to center children */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically if needed */
+    height: 100vh; /* Use viewport height to make it cover the full screen */
+}
+
+
+.ajanlatok img {
+    max-width: 100%; /* Ensures the image is responsive and doesn't overflow */
+    height: auto; /* Maintain aspect ratio */
+}
+
+
+.bottom-container {
+    display: flex;
+    justify-content: center; /* Center the children */
+    padding: 40px 5%; /* Reduced side padding to push content towards the edges */
+    gap: 120px; /* Adds space between the map and the form */
+    background-color: white; /* Or any other color you wish to use */
+    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
+}
+
+.map iframe {
+    width: 450px; /* Adjust width to make the iframe square */
+    height: 450px; /* Adjust height to make the iframe square */
+    border: none;
+}
+
+.contact-form {
+    flex-grow: 1; /* Allow the form to fill the space next to the map */
+    max-width: 400px; /* Adjust the max width as needed */
+    margin-left: 20px; /* You can reduce this margin if you want them closer */
+}
+
+.contact-form form {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 10px;
+    margin-bottom: 15px; /* Adds space between form fields */
+    border: 1px solid #ccc; /* Light grey border */
+    border-radius: 4px; /* Rounded borders */
+}
+
+.contact-form button {
+    background-color: #6F2888; /* Adjust to match your theme */
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #5a2168; /* Darker shade for hover effect */
+}
+
+
+.contact-phone {
+ 
+    font-weight: 0;
+    font-size: 18px; /* Adjust the font size as needed */
+    margin-top: 35px;
+    display: block; /* Ensures it takes its own line below the button */
+}
+
+.social-icons {
+    margin-top: 5px;
+}
+
+.social-icons a {
+    font-size: 24px; /* Adjust the size as needed */
+    color: #6F2888; /* Adjust to match your theme */
+    margin-right: 10px;
+}
+
+.social-icons a:hover {
+    color: #5a2168; /* Darker shade for hover effect */
+}
+
+.social-icons a img {
+    width: 24px; /* Adjust the size as needed */
+    height: auto;
+    margin-right: 10px;
+}
+
+.contact-phone i {
+    margin-right: 5px; /* Adds space between the icon and the phone number */
+}

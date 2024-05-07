@@ -1,0 +1,52 @@
+.design-card-container {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  
+  .design-card {
+    position: relative;
+    width: 300px; /* Set a fixed width for design cards */
+    height: 400px; /* Set a fixed height for design cards */
+    margin: 20px; /* Spacing between cards */
+    border: 1px solid #ccc; /* Optional border */
+    overflow: hidden; /* Ensures no overflow of content */
+  }
+  
+  .design-card-logo {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 1; /* Subtle logo appearance */
+    width: 80%; /* Logo size */
+    z-index: 1;
+    
+  }
+  
+  .price-card {
+    position: absolute;
+    top: 55%; /* Position slightly lower than center */
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%; /* Slightly less than design card to fit inside */
+    padding: 20px; /* Spacing inside the price card */
+    background-color: #fff; /* Background color for the price card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Optional shadow */
+    z-index: 2; /* Above the logo */
+    /* Other styles like border-radius, etc., can be added */
+  }
+  
+  /* Responsive adjustments if necessary */
+  @media (max-width: 768px) {
+    .design-card-container {
+      flex-direction: column;
+    }
+    
+    .design-card {
+      width: 90%; /* Full width on smaller screens */
+      margin: 20px auto; /* Centered margin for mobile */
+    }
+  }
+  

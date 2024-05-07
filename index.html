@@ -1,141 +1,318 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hu">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Section with Gradient</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
-
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>GYM CITY OFFICE</title>
+<link rel="stylesheet" href="styles.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<div class="social-icons-header">
+    <a href="your-facebook-page-url" target="_blank"><i class="fab fa-facebook-f"></i></a>
+    <a href="your-instagram-page-url" target="_blank"><i class="fab fa-instagram"></i></a>
+</div>
 </head>
 <body>
 
-    
     <nav class="navbar">
-        <div class="logo">
-            <a>Roll-Infrashape</a>
-        </div>
-        <div class="nav-links">
-            <a href="#home">főoldal</a>
-            <div class="dropdown">
-                <a href="#machines">gépeink</a>
-                <div class="dropdown-content">
-                    <a href="#machine1">infrashape edzés</a>
-                    <a href="#machine2">rollshape edzés</a>
-                    <a href="#machine3">access bars kezelés</a>
-                    <a href="#machine4">hiemt + rf kezelés</a>
-                </div>
-            </div>
-            <a href="#contact">kapcsolat</a>
-            <a href="#prices">árlista</a>
-        </div>
+        <img src="logo.png" alt="Logo" class="navbar-logo">
+        <ul>
+            <li><a href="index.html">Kezdőlap</a></li>
+            <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+            <li><a href="#orarend">Órarend</a></li>
+            <li><a href="#edzok">Edzők</a></li>
+            <li><a href="prices.html">Áraink</a></li>
+            <li><a href="#galeria">Galéria</a></li>
+            <li><a href="#karrier">Karrier</a></li>
+            <li><a href="#kapcsolat">Kapcsolat</a></li>
+        </ul>
+        
     </nav>
-    <div class="hero">
-        <div class="hero-inner">
-            <p>Érd el az álom alakodat te is</p>
-            <h1>Roll-Infrashape</h1>
-            
-            <a href="naptar.html"><button>Online Időpontkérés</button></a>
+    
+
+
+
+
+
+
+
+    <div class="parallax">
+        <div class="landing-text">
+
+            <h2 class="subheadline">Alakítsd át az életed a GYM CITY OFFICE-ban</h2>
+            <p class="subheadline">Fedezd fel a lehetőségeidet modern létesítményeinkkel és szakértő edzőinkkel.</p>
+        
         </div>
     </div>
-
-    <script>
-        document.addEventListener("DOMContentLoaded", function() {
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add("in-view");
-                    }
-                });
-            }, { threshold: 0.5 }); // Adjust threshold value as needed
-        
-            document.querySelectorAll('.content-section').forEach(section => {
-                observer.observe(section);
-                // Add 'even' class based on index
-                if ([...section.parentElement.children].indexOf(section) % 2 === 1) {
-                    section.classList.add('even');
-                }
-            });
-        });
-        </script>
+    
 
 
 
-<div class="container">
-    <div class="ajanlatok">
-        <img src="ajánlatok.JPG" alt="Ajánlatok">
+
+
+
+
+
+
+
+<div class="elementor-container elementor-column-gap-no">
+    <div class="elementor-column elementor-col-100 elementor-top-column elementor-element" data-id="unique-id" data-element_type="column">
+        <div class="elementor-widget-wrap elementor-element-populated">
+            <div class="elementor-element elementor-widget elementor-widget-art-ticker" data-id="unique-ticker-id" data-element_type="widget" data-settings="{&quot;slider_speed&quot;:25}">
+                <div class="elementor-widget-container">
+                    <div class="art-ticker">
+                        <div class="js-marquee-wrapper" style="animation: scroll-left 60s linear infinite;">
+                            <div class="js-marquee">
+                                <span class="art-ticker__item">Core Training</span>
+                                <span class="art-ticker__item">Cross Basic</span>
+                                <span class="art-ticker__item">Cross edzés</span>
+                                <span class="art-ticker__item">Cross HIT</span>
+                                <span class="art-ticker__item">Cross Lurkó</span>
+                                <span class="art-ticker__item">Girl Body</span>
+                                <span class="art-ticker__item">Kagami Ryu</span>
+                                <span class="art-ticker__item">Krav Maga</span>
+                                <span class="art-ticker__item">Privát óra</span>
+                                <span class="art-ticker__item">Stretching</span>
+                                <span class="art-ticker__item">Thai-Box</span>
+                                <!-- Repeat the list to ensure seamless looping -->
+                                <span class="art-ticker__item">Core Training</span>
+                                <span class="art-ticker__item">Cross Basic</span>
+                                <span class="art-ticker__item">Cross edzés</span>
+                                <span class="art-ticker__item">Cross HIT</span>
+                                <span class="art-ticker__item">Cross Lurkó</span>
+                                <span class="art-ticker__item">Girl Body</span>
+                                <span class="art-ticker__item">Kagami Ryu</span>
+                                <span class="art-ticker__item">Krav Maga</span>
+                                <span class="art-ticker__item">Privát óra</span>
+                                <span class="art-ticker__item">Stretching</span>
+                                <span class="art-ticker__item">Thai-Box</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
 
-    <div class="grid-container">
-        <section class="content-section image-left">
-            <div class="content-image">
-                <img src="infraedzes.png" alt="Infraedzés">
-            </div>
-            <div class="content-text">
-                <h2>infrashape edzés</h2>
-                <p>Fitnesztechnológia, amely infravörös fényt és vákuumot használ zsírégetésre és testformálásra biciklizés közben</p>
-                <button class="cta-button">Tudj meg többet</button>
-            </div>
-        </section>
-        
-        <section class="content-section image-right">
-            <div class="content-image">
-                <img src="rollshape.png" alt="Rollshape">
-            </div>
-            <div class="content-text">
-                <h2>rollshape edzés</h2>
-                <p>Testformáló masszázs és edzés forgó hengerrel, amely javítja a vérkeringést és elősegíti a zsírégetést</p>
-                <button class="cta-button">Tudj meg többet</button>
-            </div>
-        </section>
-        
-        <section class="content-section image-left">
-            <div class="content-image">
-                <img src="acces_bars.png" alt="Acces Bars">
-            </div>
-            <div class="content-text">
-                <h2>access bars kezelés</h2>
-                <p>Alternatív terápia, amely a fej pontjainak érintésével csökkenti a mentális zajt és elősegíti a relaxációt</p>
-                <button class="cta-button">Tudj meg többet</button>
-            </div>
-        </section>
-        
-        <section class="content-section image-right">
-            <div class="content-image">
-                <img src="huemt.png" alt="Huemt">
-            </div>
-            <div class="content-text">
-                <h2>hiemt + rf kezelés</h2>
-                <p> Izomépítő és zsírégető elektromágneses terápia rádiófrekvenciás bőrfeszesítéssel kombinálva</p>
-                <button class="cta-button">Tudj meg többet</button>
-            </div>
-        </section>
+<div class="statistics">
+    <div class="stat-box">
+        <h3>EDZŐK</h3>
+        <span class="line"></span> <!-- Replacement for <hr> that fits better in the flow -->
+        <p class="number" data-count="8">0</p>
+      </div>
+      <div class="stat-box">
+        <h3>CSOPORTOS ÓRÁK</h3>
+        <span class="line"></span> <!-- Replacement for <hr> that fits better in the flow -->
+        <p class="number" data-count="11">0</p>
+      </div>
+      <div class="stat-box">
+        <h3>TAPASZTALAT</h3>
+        <span class="line"></span>
+        <p class="number" >
+            <span class="count" data-count="10">0</span><span class="years"> év</span>
+        </p>
+      </div>
+      
+      <div class="stat-box">
+        <h3>TAGOK</h3>
+        <span class="line"></span>
+        <p class="number">
+          <span class="count" data-count="370">0</span><span class="years"> +</span>
+        </p>
+      </div>
+      
+      
+      <div class="stat-box">
+        <h3>GÉPEK</h3>
+        <span class="line"></span> <!-- Replacement for <hr> that fits better in the flow -->
+        <p class="number" data-count="90">0</p>
+      </div>
+                              
+  </div>
+  <script src="script.js"></script>
+    
+  
+  
+
+
+
+  <div class="services-intro">
+    
+    <div class="quote-area">
+        <h1>"Change Your Body, Change Your Life."</h1>
+        <p>Discover the difference with Gym City Office's top facilities and tailored fitness programs.</p>
+    </div>
+    <div class="service-images">
+        <div class="image" id="pic1">
+            <img src="sauna.png" alt="Luxurious Saunas">
+            <h3>Sauna</h3>
+            <p>Saunas: Perfect for relaxation and muscle recovery.</p>
+            <a href="#" class="more-info-link">More Information</a>
+        </div>
+        <div class="image" id="pic2">
+            <img src="group-training.png" alt="Group Lessons">
+            <h3>Csoportos orák</h3>
+            <p>Group Lessons: Engage and energize with our diverse classes.</p>
+            <a href="#" class="more-info-link">More Information</a>
+        </div>
+        <div class="image" id="pic3">
+            <img src="fitness-cardio.png" alt="Fitness and Cardio">
+            <h3>Fitness és Cardio</h3>
+            <p>Fitness & Cardio: Equipped with the latest in fitness technology.</p>
+            <a href="#" class="more-info-link">More Information</a>
+        </div>
     </div>
 
-    <div class="bottom-container">
-        <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5395.187874196779!2d18.917553848278892!3d47.458854340871575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4741e0780a637189%3A0xcd3ec7e2f6a96ca7!2sRoll-Infrashape%20Buda%C3%B6rs!5e0!3m2!1shu!2shu!4v1712176970506!5m2!1shu!2shu" width="800" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
-        <div class="contact-form">
-            <form action="YOUR_SERVER_SIDE_ENDPOINT" method="POST">
-                <input type="text" id="full-name" name="full_name" placeholder="név" required>
-                <input type="email" id="email" name="email" placeholder="email" required>
-                <input type="text" id="subject" name="subject" placeholder="tárgy" required>
-                <textarea id="message" name="message" placeholder="üzenet" required></textarea>
-                <button type="submit">Üzenet küldáse</button>
-                <p class="contact-phone"><i class="fas fa-phone-alt"></i> +06703950014</p>
+</div>
 
-                <div class="social-icons">
-                    <a href="YOUR_FACEBOOK_LINK" target="_blank" class="facebook-icon"><i class="fab fa-facebook-square"></i></a>
-                    <a href="YOUR_INSTAGRAM_LINK" target="_blank" class="instagram-icon"><i class="fab fa-instagram-square"></i></a>
+
+
+  
+
+<div class="parallax-trainer">
+    <div class="parallax-text-container">
+        <h1 class="parallax-text">"Új vagy az edzés világában? <span class="highlight">Ne aggódj</span>, csapatunk minden lépésben segít neked."</h1>
+        <p class="parallax-text">Ismerd meg <span class="highlight">személyi edzőinket</span>, akik személyre szabottan segítenek elérni céljaidat.</p>
+        <button class="animated-button">
+            <svg viewBox="0 0 24 24" class="arr-2" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+              ></path>
+            </svg>
+            <span class="text">TUDJ MEG TÖBBET</span>
+            <span class="circle"></span>
+            <svg viewBox="0 0 24 24" class="arr-1" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M16.1716 10.9999L10.8076 5.63589L12.2218 4.22168L20 11.9999L12.2218 19.778L10.8076 18.3638L16.1716 12.9999H4V10.9999H16.1716Z"
+              ></path>
+            </svg>
+          </button>
+          
+    </div>
+</div>
+
+
+
+
+
+
+  
+
+
+    <div class="calendar-container">
+
+
+        <div class="calendar-controls">
+            <button id="prevWeek" class="schedule-button-prev">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+                <p>előző</p>
+              </button>
+              
+            
+            
+            
+            <select id="classSelector">
+                <option value="valasszonsportot" selected>VÁLASSZON SPORTOT</option>
+                <option value="class1">Class 1</option>
+                <option value="class2">Class 2</option>
+                <option value="class3">Class 3</option>
+            </select>
+            <button id="nextWeek" class="schedule-button-next">
+                <p>kovetkező</p>
+                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="4">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                </svg>
+            </button>
+        </div>
         
+        
+          
+        
+          
+
+        
+        <table id="weeklySchedule">
+            <thead>
+                <tr>
+                    <th></th> <!-- Top left corner empty -->
+                    <th id="day1">Hétfő</th>
+                    <th id="day2">Kedd</th>
+                    <th id="day3">Szerda</th>
+                    <th id="day4">Csütörtök</th>
+                    <th id="day5">Péntek</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Generate rows for each hour from 6:00 to 22:00 -->
+                <tr><td>6:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>7:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>8:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>9:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>10:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>11:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>12:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>13:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>14:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>15:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>16:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>17:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>18:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>19:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>20:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>21:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+                <tr><td>22:00</td><td></td><td></td><td></td><td></td><td></td></tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div id="myModal" class="modal">
+    
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <img src="trainer2.jpg" alt="Instructor" class="modal-image">
+            <div class="modal-details">
+                <p>9:00 - 10:00</p>
+                <p>Yoga</p>
+                <p>John Doe</p>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+<footer class="site-footer">
+    <div class="footer-map">
+        <iframe src="https://maps.google.com/maps?q=Gym%20City%20Office%201138%20Budapest,%20Madar%C3%A1sz%20Viktor%20utca%2047-49.,%20Madar%C3%A1sz%20Irodapark%202.%20%C3%A9p%C3%BClet&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+    </div>
+    <div class="footer-contact-area">
+        <div class="footer-contact-form">
+            <form action="submit_form.php" method="post">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send</button>
             </form>
         </div>
+        <div class="footer-contact-details">
+            <p>Gym City Office</p>
+            <p>1138 Budapest, Madarász Viktor utca 47-49., Madarász Irodapark 2. épület</p>
+            <p>+36 1/793-89-95</p>
+            <a href="mailto:gymcityoffice@gmail.com">gymcityoffice@gmail.com</a>
+            <div class="social-icons">
+                <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        </div>
     </div>
-    
+</footer>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
-</body>
+
+  
+  
+  
+  
 </html>

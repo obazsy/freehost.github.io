@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+
+.trainer-container {
+    width: 100%;
+    height: 300px; /* Adjust based on your image height */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background: black; /* Optional: Adjust background color */
+}
+
+.trainer-marquee-wrapper {
+    display: flex;
+    align-items: center;
+    animation: scroll-left-trainer 70s linear infinite;
+}
+
+.trainer-marquee {
+    display: flex;
+}
+
+@keyframes scroll-left-trainer {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-70%); } /* Adjust based on total content width */
+}
+
+.trainer-item {
+    display: inline-block;
+    width: 190px; /* Set image width */
+    height: 250px; /* Set image height */
+    margin-right: 20px; /* Space between images */
+}
+
+@media (max-width: 768px) {
+    .trainer-item {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+    }
+    .trainer-marquee-wrapper {
+        animation-duration: 80s; /* Slower for smoother mobile experience */
+    }
+}
+    </style>
+</head>
+<body>
+    
+
+    <div class="trainer-container">
+        <div class="trainer-marquee-wrapper">
+            <div class="trainer-marquee">
+                <!-- Images of trainers -->
+                <img src="trainer1.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer2.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer3.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer4.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer5.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer6.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer7.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer8.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer9.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer10.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer1.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer2.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer3.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer4.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer5.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer6.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer7.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer8.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer9.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer10.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer1.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer2.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer3.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer4.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer5.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer6.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer7.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer8.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer9.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer10.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer1.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer2.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer3.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer4.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer5.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer6.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer7.jpg" alt="Trainer 1" class="trainer-item">
+                <img src="trainer8.jpg" alt="Trainer 2" class="trainer-item">
+                <img src="trainer9.jpg" alt="Trainer 3" class="trainer-item">
+                <img src="trainer10.jpg" alt="Trainer 3" class="trainer-item">
+    
+            </div>
+        </div>
+    </div>
+</body>
+</html>

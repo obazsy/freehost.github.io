@@ -1,366 +1,1106 @@
+:root {
+    --primary-color: #ff7d00; /* Define the primary color variable */
+}
 
-body, h1, p, button {
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;700&display=swap');
+
+
+body, html {
+    height: 100%;
     margin: 0;
-    padding: 0;
-    font-family: 'Your preferred font', sans-serif;
-}
+    overflow-x: hidden;
+    font-family: 'Montserrat', sans-serif;
 
-.hero {
-    
-    background-image: url('stretch.jpg');
-    background-size: cover;
-    background-position: center;
-    position: relative;
-    overflow: hidden;
-    color: white;
-}
-
-.hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    background: linear-gradient(to top, rgba(160, 61, 173, 0.7), rgba(255,0,0,0));
-    z-index: 0;
-}
-
-.hero-inner {
-    position: relative;
-    padding: 100px;
-    text-align: center;
-    z-index: 1;
-}
-
-h1 {
-    font-size: 2.5em; /* Large text */
-    margin-bottom: 0.5em;
-}
-
-p {
-    font-size: 1.5em; /* Smaller text than h1 */
-    margin-bottom: 1em;
-}
-
-button {
-    margin-top: 50px;
-    background-color: #7f5a91;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    font-size: 1.5em;
-    transition: background-color 0.3s;
-}
-
-button:hover {
-    background-color: #6a009b;
-}
-
-body {
-    font-family: Arial, sans-serif;
-    padding-top: 60px; /* Adjust based on your navbar's height */
-    background-color: rgb(255, 243, 255); /* Light purple background */
-    margin: 0; /* Removes default margin */
 }
 
 
 .navbar {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background: linear-gradient(to left, rgb(210,183,227) 0%, rgb(255, 231, 255) 100%);
+    background-color: rgb(34, 34, 34);
+    padding: 0px 0px;
     position: fixed;
-    top: 0;
     width: 100%;
+    top: 0;
+    left: 0;
     z-index: 1000;
-    padding: 10px 20px;
-    height: 9%;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(20, 20, 20, 0.5);
 }
 
-.nav-links {
-    margin-right: 80px; /* Adjust the right margin to increase distance from the right edge */
+.navbar ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    flex-grow: 1; /* Allows the list to use available space */
+    margin-left: 25%; /* Adjusts the margin from the left to decrease the gap */
 }
 
-.nav-links a {
-    font-variant: ca;
-    font-size: larger;
-    color: rgb(0, 0, 0);
+.navbar li {
+    display: inline;
+}
+
+.navbar a {
+    color: var(--primary-color); /* Primary color for text */
     text-decoration: none;
-    margin: 0 25px; /* This keeps the gap between the links the same */
-}
-
-.nav-links a:last-child {
-    margin-right: 0; /* Removes the extra margin for the last link if needed */
-}
-
-.nav-links a:hover {
-    color: rgb(248, 207, 241);
-}
-
-.logo {
-    margin-left: 40px;
-    color: rgb(0, 0, 0);
-    font-size: 24px;
-}
-
-.logo img {
-    margin-left: 100px;
-    height: auto; /* Maintain aspect ratio */
-    width: 110px; /* Example size, adjust as needed */
-}
-
-
-/* Style adjustments for dropdown */
-.navbar .dropdown {
-    position: relative;
-    display: inline-block;
-}
-
-.navbar .dropdown-content {
-    display: none;
-    position: absolute;
-    background-color: #f9f9f9; /* Light background for the dropdown items */
-    min-width: 160px; /* Minimum width of the dropdown */
-    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2); /* Adds a shadow for depth */
-    z-index: 1;
-}
-
-.navbar .dropdown-content a {
-    color: black; /* Text color */
-    padding: 12px 16px;
-    text-decoration: none; /* No underline by default */
+    font-weight: bold;
+    padding: 8px 16px; /* Adjusted padding */
     display: block;
+    transition: background-color 0.3s ease;
+    white-space: nowrap; /* Prevents the text from wrapping */
+    font-size: 1.2em; /* Increased font size for better visibility */
+}
+
+.navbar a:hover {
+    background-color: var(--primary-color);
+    color: black;
+}
+
+.navbar-logo {
+    margin-left: 4%;
+    height: 140px; /* Adjust size as needed */
+}
+
+
+
+
+
+
+
+
+
+
+
+    .parallax {
+        background-image: url('back-modified.jpg');
+        height: 90vh;
+        background-attachment: fixed;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        position: relative; /* This is important for z-index stacking context */
+        color: var(--primary-color); /* Set text color */
+    }
+    
+    .parallax::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1; /* Overlay layer */
+    }
+    
+    .parallax .landing-text {
+        position: relative;
+        z-index: 2; /* Make sure this is above the ::before overlay */
+        color: white; /* Fallback color */
+        color: var(--primary-color); /* Custom property color */
+    }
+    
+    .parallax h2.subheadline {
+        font-weight: bold;
+        font-size: 3rem; /* Your desired font size */
+        margin-bottom: 0.5em; /* Space below the headline */
+    }
+    
+    .parallax p.subheadline {
+        font-size: 2rem; /* Your desired font size for the paragraph */
+        margin: 0; /* Removes the default margin */
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.statistics {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 50px;
+    background-color: black;
+    margin: auto;
+  }
+  
+  .stat-box {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    position: relative;
+    margin: 10px;
+  }
+  
+  .stat-box::before {
+    content: '';
+    display: block;
+    padding-top: 100%; /* Maintains a 1:1 aspect ratio, creating square boxes */
+  }
+  
+  .stat-box h3 {
+    position: absolute;
+    top: 10%; /* Places the title a bit down from the top of the box */
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 1em;
+    color: #ccc;
+    width: 100%;
+    margin: 0;
+  }
+  
+  .stat-box .line {
+    display: block;
+    border: none;
+    height: 2px;
+    background-color: var(--primary-color);
+    width: 80%;
+    position: absolute;
+    top: 20%; /* Position the line below the title */
+    left: 10%;
+  }
+  .stat-box .number {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em; /* You might want to adjust this depending on your design */
+    font-weight: bold;
+    margin: 0;
+    width: 100%;
+    white-space: nowrap; /* Prevent wrapping to a new line */
+  }
+  
+  .stat-box .years {
+    font-size: 0.5em; /* Smaller font size for the text */
+    vertical-align: top; /* Aligns the text with the top of the numbers */
+  }
+  
+  
+  
+
+
+
+
+
+
+  .trainer-profile {
+    display: flex;
+    width: 70%;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+    align-items: center; /* Vertically centers items in the flex container */
+}
+
+.trainer-image {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+}
+
+.trainer-info {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 20px; /* Add padding for spacing */
+}
+
+.trainer-info h2 {
+    color: var(--primary-color);
+    margin-bottom: 0.5em;
+}
+
+.line {
+    height: 2px;
+    background-color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+/* First Trainer Profile styling */
+.trainer-profile:nth-of-type(1) {
+    flex-direction: row-reverse; /* Image on the right */
+}
+
+/* Second and subsequent Trainer Profiles styling */
+.trainer-profile:nth-of-type(2) {
+    flex-direction: row; /* Image on the left */
+}
+
+/* Ensure the text aligns to the edge close to the image */
+.trainer-profile:nth-of-type(1) .trainer-info,
+.trainer-profile:nth-of-type(2n+3) .trainer-info { /* Every odd profile starting from the third */
+    text-align: right;
+}
+
+.trainer-profile:nth-of-type(even) .trainer-info { /* Every even profile */
     text-align: left;
 }
 
-.navbar .dropdown:hover .dropdown-content {
-    display: block;
+@media (max-width: 768px) {
+    .trainer-profile {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .trainer-image,
+    .trainer-info {
+        width: 100%; /* Full width for a stacked layout on small screens */
+        padding: 0; /* Remove padding for the stacked layout */
+        text-align: center; /* Center text for all profiles */
+        order: 0; /* Reset order to default stacking */
+    }
+
+    .line {
+        width: 50%; /* Shorter line for a better fit on small screens */
+        margin: 10px auto; /* Center the line horizontally */
+    }
 }
 
-.navbar .dropdown-content a:hover {
-    color: rgb(210,183,227); /* Darker color for the text on hover */
-    background-color: transparent; /* Keeps the background unchanged */
-    text-decoration: underline; /* Adds an underline to highlight the text */
+
+
+
+
+
+
+.elementor-container {
+    width: 100%; /* Ensure it spans the full width of the viewport */
+    height: 200px; /* Increase the height as needed */
+    overflow: hidden; /* Keeps the marquee text inside the container */
+    display: flex; /* Enables flexbox layout */
+    align-items: center; /* Centers content vertically */
+    justify-content: center; /* Centers content horizontally if needed */
+    background: black; /* Optional: Sets a background color for visibility */
 }
 
-
-
-.grid-container {
-    display: grid;
-    grid-template-columns: 1fr; /* One column layout */
-    gap: 30px; /* Space between rows */
-    margin: 0 auto; /* Center the grid container if needed */
-    max-width: 90%; /* Adjust based on your design */
-    padding: 40px 0; /* Padding at the top and bottom */
+.elementor-column {
+    width: 100%;
 }
 
-/* General content section styles */
-.content-section {
-    height: 500px;
+/* Marquee Widget Styling */
+.art-ticker {
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    background: black; /* Slight variation for marquee background */
+}
+
+.js-marquee-wrapper {
     display: flex;
-    align-items: stretch; /* This will make children stretch to the height of the tallest one */
-    justify-content: center;
-    margin: 40px 10%; /* Adjusts overall section margin */
-    flex-wrap: wrap; /* Allows items to wrap in smaller viewports */
-    gap: 20px; /* Adds space between the image and text */
-}
-.content-section:nth-child(odd)::before {
-    background: linear-gradient(to left, rgba(210,183,227, 0.5), transparent);
-}
-
-/* Different gradient for even numbered sections */
-.content-section:nth-child(even)::before {
-    background: linear-gradient(to right, rgba(210,183,227, 0.5), transparent);
-}
-
-/* Visibility and animation styles */
-.content-section {
-    opacity: 0;
-    transform: translateX(-10%);
-    transition: all 1s ease-out;
-}
-
-.content-section.even {
-    transform: translateX(10%);
-}
-
-.content-section.in-view {
-    opacity: 1;
-    transform: translateX(0);
-}
-
-/* Content image styles */
-.content-section .content-image {
-    flex: 1; /* Allows items to grow and shrink as needed */
-    min-width: 500px; /* Sets a maximum width */
-    text-align: center; /* Centers text within its container */
-    display: flex;
-    justify-content: center; /* Centers the content-image and content-text themselves */
     align-items: center;
+    animation: scroll-left 70s linear infinite;
 }
 
-/* Content text styles */
-.content-section .content-text {
-    flex: 1; /* Allows the container to grow and shrink as needed */
-    max-width: 45%; /* Sets a maximum width for the container */
-    display: flex; /* Enables the use of Flexbox for layout */
-    flex-direction: column; /* Stacks flex items vertically */
-    justify-content: center; /* Centers the flex items along the main axis */
-    align-items: center; /* Centers the flex items along the cross axis */
-    text-align: center; /* Ensures text within the container is centered */
-}
-
-/* Header styles within content text */
-.content-section .content-text h2 {
-    font-variant: small-caps;
-    font-display: 100;
-    font-size: 24px; /* Example size, adjust as needed */
-    color: #1d1d1d; /* Dark grey, adjust the color as needed */
-    margin-bottom: 20px; /* Adds space below the h2 heading */
-}
-
-/* Paragraph styles within content text */
-.content-section .content-text p {
-    margin-bottom: 40px;
-    font-size: 16px; /* Example size, adjust as needed */
-    color: #464646; /* Lighter grey, adjust the color as needed */
-    line-height: 1.6; /* Adjusts the line height for readability */
-}
-
-/* Gradient overlay for content section */
-.content-section::before {
-    content: '';
-    position: absolute;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: linear-gradient(to right, rgba(210,183,227, 0.5), transparent);
-    z-index: 1;
-}
-
-/* Image styles */
-.content-image img {
-    max-width: 300px; /* Sets a specific size for images */
-    height: auto; /* Maintains aspect ratio */
-    object-fit: cover; /* Ensures the image covers the area nicely */
-    margin: 0 auto; /* Centers images within the content-image div */
-}
-
-/* Additional layout styles */
-.content-section.image-left {
-    flex-direction: row-reverse;
-}
-
-/* Button styling */
-.cta-button {
-    padding: 10px 20px;
-    background-color: #6F2888; /* Example button color */
-    color: white; /* Text color */
-    border: none;
-    cursor: pointer;
-    z-index: 3;
-    transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth transition for transform and background-color */
-    border-radius: 5px; /* Optional: adds rounded corners to the button */
-}
-
-.cta-button:hover {
-    background-color: #6F2888; /* Darker shade for hover effect */
-    transform: scale(1.15); /* Slightly increase the button size */
-}
-
-
-
-.container {
-    display: flex; /* Use flexbox to center children */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically if needed */
-    height: 100vh; /* Use viewport height to make it cover the full screen */
-}
-
-
-.ajanlatok img {
-    max-width: 100%; /* Ensures the image is responsive and doesn't overflow */
-    height: auto; /* Maintain aspect ratio */
-}
-
-
-.bottom-container {
+.js-marquee {
     display: flex;
-    justify-content: center; /* Center the children */
-    padding: 40px 5%; /* Reduced side padding to push content towards the edges */
-    gap: 120px; /* Adds space between the map and the form */
-    background-color: white; /* Or any other color you wish to use */
-    flex-wrap: wrap; /* Allow the items to wrap on smaller screens */
 }
 
-.map iframe {
-    width: 450px; /* Adjust width to make the iframe square */
-    height: 450px; /* Adjust height to make the iframe square */
-    border: none;
+/* Marquee Animation */
+@keyframes scroll-left {
+    0% { transform: translateX(0); }
+    100% { transform: translateX(-300%); } /* Assumes doubled content for seamless looping */
 }
 
-.contact-form {
-    flex-grow: 1; /* Allow the form to fill the space next to the map */
-    max-width: 400px; /* Adjust the max width as needed */
-    margin-left: 20px; /* You can reduce this margin if you want them closer */
+/* Individual Item Styling */
+.art-ticker__item {
+    display: inline-block;
+    padding: 10px 20px; /* Padding around text for better legibility */
+    font-size: 100px; /* Size of the font for visibility */
+    color: var(--primary-color); /* Bright color for text to stand out */
+    margin-right: 20px; /* Space between consecutive items */
 }
 
-.contact-form form {
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .art-ticker__item {
+        font-size: 16px; /* Smaller font size for mobile devices */
+        padding: 8px 15px;
+        margin-right: 10px;
+    }
+
+    .js-marquee-wrapper {
+        animation-duration: 80s; /* Slower animation on smaller screens */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+.services-intro {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 150%;
+    width: 100vw;
+    padding: 0px 0;
+    margin: 0 auto;
+    background-color: black;
+    background: linear-gradient(120deg, black 0%, rgb(75, 75, 75) 100%);
+    animation: gradientBackground 15s ease infinite;
+    color: var(--primary-color);
+    box-sizing: border-box;
+    overflow: hidden;
+    left: 50%;
+    transform: translateX(-50%);
+    /* Maintain the existing black background as a fallback */
+    background: linear-gradient(120deg, black(112, 225, 245, 0.6) 0%, rgba(43, 43, 43, 0.6) 100%), black;
+}
+
+@keyframes gradientBackground {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.service-images .image img {
+    transition: transform 0.3s ease;
+}
+
+.service-images .image:hover img {
+    transform: scale(1.05);
+    /* Add a box-shadow if you want to create a lifting effect */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+
+
+
+
+
+
+
+  
+.quote-area {
+    flex: 1;
+    padding: 0 20px;
+    margin-left: 15%;
+    text-align: left;
+    margin-right: 10%;
+    position: relative;
+
+}
+.quote-area::before {
+    content: 'GYM\A CITY \A GYM\A CITY';  /* Adds a newline between GYM and CITY */
+    position: absolute;
+    top: 50%;
+    left: 30%;
+    transform: translate(-50%, -50%) scale(5); /* Adjust scale to suit your preference */
+    font-size: 3em; /* You can adjust the size to fit your design */
+    color: rgb(175, 175, 175);
+    z-index: -1;
+    opacity: 0.1;
+    white-space: pre-line; /* Ensures that newline characters are recognized */
+    overflow: hidden;
+    pointer-events: none;
+}
+
+
+.quote-area p{
+    color:white
+        
+}
+.service-images {
+    flex: 2;
+    display: flex;
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.image {
+    position: absolute;
+    width: auto;
+}
+
+#pic1 {
+    top: 68%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+#pic2 {
+    top: 52%;
+    left: 54%;
+    transform: translate(-50%, -50%);
+    width: 250px;
+}
+
+#pic3 {
+    top: 20%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+    width: 300px;
+}
+
+.image img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.image p, .image button {
+    visibility: visible; /* Make text and button always visible */
+}
+
+.image p{
+    
+    color: white;
+}
+
+
+
+.more-info-link {
+    display: inline; /* Display the link inline with text */
+    color: var(--primary-color); /* Set the link color to white */
+    text-decoration: underline; /* Underline the text to indicate it's a link */
+    cursor: pointer; /* Change cursor to indicate clickable */
+    padding-top: 10px; /* Space from the description text */
+    font-size: 1em; /* Set desired font size */
+}
+
+.more-info-link:hover {
+    color: rgb(255, 184, 97); /* Change color on hover to indicate interactivity */
+}
+
+@media (max-width: 1024px) {
+    .services-intro {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+    }
+
+    .quote-area, .service-images {
+        width: 90%;
+        margin: 0 5%;
+    }
+
+    .image {
+        position: static;
+        width: 80%;
+        margin: 10px auto;
+        transform: none;
+    }
+
+    .image img {
+        width: 100%;
+    }
+
+    .image p, .image button {
+        visibility: visible; /* Always show text and button on mobile */
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.parallax-trainer {
+    background-image: url('back2.jpg');
+    height:80vh;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: relative;
+}
+
+.parallax-text-container {
+    position: absolute;
+    right: 20%; /* Increased to move text further right but within a safe distance from the edge */
+    top: 50%;
+    transform: translateY(-50%);
+    text-align: right;
+    width: 30%; /* Decreased width of the text box to prevent text from reaching too close to the edge */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    z-index: 2;
+}
+
+.parallax-text {
+    font-size: 2em;
+}
+
+.parallax-text .highlight {
+    color: var(--primary-color); /* This will apply your primary color to highlighted words */
+}
+
+.more-info-link-trainer {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: var(--primary-color);
+    padding: 10px 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+
+.animated-button {
+    margin-left: auto;
+    margin-right: 30%;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    padding: 16px 36px;
+    border: 4px solid;
+    border-color: transparent;
+    font-size: 16px;
+    background-color: inherit;
+    border-radius: 100px;
+    font-weight: 600;
+    color: var(--primary-color);
+    box-shadow: 0 0 0 2px var(--primary-color);
+    cursor: pointer;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  .animated-button svg {
+    position: absolute;
+    width: 24px;
+    fill: var(--primary-color);
+    z-index: 9;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .arr-1 {
+    right: 16px;
+  }
+  
+  .animated-button .arr-2 {
+    left: -25%;
+  }
+  
+  .animated-button .circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    background-color: var(--primary-color);
+    border-radius: 50%;
+    opacity: 0;
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button .text {
+    position: relative;
+    z-index: 1;
+    transform: translateX(-12px);
+    transition: all 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+  }
+  
+  .animated-button:hover {
+    box-shadow: 0 0 0 12px transparent;
+    color: #212121;
+    border-radius: 12px;
+  }
+  
+  .animated-button:hover .arr-1 {
+    right: -25%;
+  }
+  
+  .animated-button:hover .arr-2 {
+    left: 16px;
+  }
+  
+  .animated-button:hover .text {
+    transform: translateX(12px);
+  }
+  
+  .animated-button:hover svg {
+    fill: #212121;
+  }
+  
+  .animated-button:active {
+    scale: 0.95;
+    box-shadow: 0 0 0 4px var(--primary-color);
+  }
+  
+  .animated-button:hover .circle {
+    width: 220px;
+    height: 220px;
+    opacity: 1;
+  }
+  
+
+
+
+
+
+
+
+
+
+
+  .calendar-container {
+    width: 75%; /* Set the width to 75% of the screen width */
+    margin: 0 auto; /* Center the container horizontally */
+}
+
+.calendar-container table {
+    width: 100%; /* Ensure the table fills the container */
+    border-collapse: collapse;
+    text-align: center;
+}
+
+.calendar-container th, .calendar-container td {
+    border: 1px solid #ccc;
+    padding: 8px;
+    vertical-align: middle; /* Center content vertically */
+}
+
+.calendar-container td {
+    background-color: #fff;
+    padding-top: 13px;
+    padding-bottom: 13px;
+    
+}
+
+.calendar-container th {
+    background-color: var(--primary-color);
+    padding: 12px;
+    border: 1px solid #ccc;
+}
+
+.highlight-column {
+    background-color: #ff5100 !important; /* Updated to a more visible color */
+    color: #000; /* Ensure text is visible */
+}
+
+.lesson-info {
+    background-color: #f0f4c3;
+    color: #333;
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+}
+
+.lesson-detail span {
+    display: block;
+    padding: 2px;
+    text-align: center;
+}
+
+
+
+.lesson-info {
+    background-color: #f0f4c3; /* Light green for visibility */
+    color: #333; /* Dark text for readability */
+    padding: 10px; /* Padding for aesthetics */
+    border-radius: 8px; /* Rounded corners */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%; /* Makes the div fill the cell */
+}
+
+.lesson-detail span {
+    display: block; /* Each span takes a full row */
+    padding: 2px; /* Small padding for spacing */
+    text-align: center; /* Center text */
+}
+
+
+
+
+.lesson-info {
+    cursor: pointer; /* Indicates it's clickable */
+    transition: transform 0.3s ease; /* Smooth transformation on hover */
+}
+
+.lesson-info:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+
+
+
+
+
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1000; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 50%; /* Could be more or less, depending on screen size */
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+
+.modal-image {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    border-radius: 50%; /* Makes the image circular */
+}
+
+.modal-details p {
+    text-align: center; /* Center the text in modal */
+    margin-top: 10px;
+}
+
+
+
+
+
+
+
+
+/* General styles for all schedules */
+
+.site-footer {
+    font-size: large;
+    display: flex;
+    justify-content:center; /* Distributes space evenly between elements */
+    align-items: start; /* Aligns items to the top */
+    background-color: var(--primary-color);
+    color: rgb(0, 0, 0);
+    padding: 40px;
+}
+ 
+.footer-map iframe {
+    margin-right: 40px;
+    width: 500px;
+    height: 500px; /* Maintains the requested size */
+}
+
+.footer-contact-area {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px; /* Sets a max width for the contact form and details */
+}
+
+.footer-contact-form {
+    width: 100%; /* Uses the full width of its container */
+}
+
+.footer-contact-form form {
     display: flex;
     flex-direction: column;
 }
 
-.contact-form input,
-.contact-form textarea {
+.footer-contact-form input,
+.footer-contact-form textarea {
     padding: 10px;
-    margin-bottom: 15px; /* Adds space between form fields */
-    border: 1px solid #ccc; /* Light grey border */
-    border-radius: 4px; /* Rounded borders */
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
 }
 
-.contact-form button {
-    background-color: #6F2888; /* Adjust to match your theme */
-    color: white;
+.footer-contact-form button {
     padding: 10px;
+    background-color: rgb(0, 0, 0);
+    color: var(--primary-color);
     border: none;
-    border-radius: 4px;
+    border-radius: 5px;
     cursor: pointer;
 }
 
-.contact-form button:hover {
-    background-color: #5a2168; /* Darker shade for hover effect */
-}
-
-
-.contact-phone {
- 
-    font-weight: 0;
-    font-size: 18px; /* Adjust the font size as needed */
-    margin-top: 35px;
-    display: block; /* Ensures it takes its own line below the button */
-}
-
-.social-icons {
-    margin-top: 5px;
+.footer-contact-details {
+    text-align: left; /* Aligns the text to the left */
+    margin-top: 10px; /* Spacing after the contact form */
 }
 
 .social-icons a {
-    font-size: 24px; /* Adjust the size as needed */
-    color: #6F2888; /* Adjust to match your theme */
-    margin-right: 10px;
+    
+    color: rgb(0, 0, 0);
+    margin: 0 10px;
+    font-size: 1.5em; /* Larger icons */
 }
 
-.social-icons a:hover {
-    color: #5a2168; /* Darker shade for hover effect */
+@media (max-width: 768px) {
+    .site-footer {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-map iframe,
+    .footer-contact-area {
+        width: 100%; /* Full width on smaller screens */
+    }
+
+    .footer-contact-details {
+        text-align: center; /* Center text on smaller screens */
+    }
 }
 
-.social-icons a img {
-    width: 24px; /* Adjust the size as needed */
-    height: auto;
-    margin-right: 10px;
+
+
+
+
+button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .schedule-button-next {
+    --primary-color: #111;
+    --hovered-color: #c84747;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .schedule-button-next p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
+  }
+  
+  .schedule-button-next::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+  }
+  
+  .schedule-button-next p::before {
+    position: absolute;
+    content: "következő";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+  }
+  
+  .schedule-button-next:hover::after {
+    width: 100%;
+  }
+  
+  .schedule-button-next:hover p::before {
+    width: 100%;
+  }
+  
+  .schedule-button-next:hover svg {
+    transform: translateX(4px);
+    color: var(--hovered-color);
+  }
+  
+  .schedule-button-next svg {
+    color: var(--primary-color);
+    transition: 0.2s;
+    position: relative;
+    width: 15px;
+    transition-delay: 0.2s;
+  }
+
+  
+
+
+
+
+  button {
+    padding: 0;
+    margin: 0;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  
+  .schedule-button-prev {
+    --primary-color: #111;
+    --hovered-color: #c84747;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  
+  .schedule-button-prev p {
+    margin: 0;
+    position: relative;
+    font-size: 20px;
+    color: var(--primary-color);
+  }
+  
+  .schedule-button-prev::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    left: 0;
+    bottom: -7px;
+    background: var(--hovered-color);
+    height: 2px;
+    transition: 0.3s ease-out;
+  }
+  
+  .schedule-button-prev p::before {
+    position: absolute;
+    content: "előző";
+    width: 0%;
+    inset: 0;
+    color: var(--hovered-color);
+    overflow: hidden;
+    transition: 0.3s ease-out;
+  }
+  
+  .schedule-button-prev:hover::after {
+    width: 100%;
+  }
+  
+  .schedule-button-prev:hover p::before {
+    width: 100%;
+  }
+  
+  .schedule-button-prev svg {
+    color: var(--primary-color);
+    transition: transform 0.2s, color 0.2s; /* Updated to animate both transform and color */
+    position: relative;
+    width: 15px;
+    transform: rotate(180deg); /* Rotate the SVG 180 degrees */
+    transition-delay: 0.2s;
+  }
+  
+  .schedule-button-prev:hover svg {
+    transform: translateX(-4px) rotate(180deg); /* Include the rotation in the hover transformation */
+    color: var(--hovered-color);
+  }
+  
+  
+  
+
+  
+
+  .calendar-controls {
+    display: flex;
+    justify-content: space-between; /* Distributes space evenly between the elements */
+    align-items: center; /* Centers items vertically */
+    padding: 10px 0; /* Provides some padding around the controls */
+    width: 100%; /* Ensures it takes full width available */
 }
 
-.contact-phone i {
-    margin-right: 5px; /* Adds space between the icon and the phone number */
+.schedule-button-prev, .schedule-button-next {
+    flex: 1; /* Allows the buttons to grow and fill the space */
+    text-align: center; /* Centers the text within the buttons */
 }
+
+#classSelector {
+    flex: 2; /* Allows the dropdown to take twice as much space as the buttons */
+    text-align: center;
+    margin: 0 20px; /* Adds space around the dropdown */
+}
+
+/* Ensuring the buttons have your desired styles */
+.schedule-button-next {
+  --primary-color: #111;
+  --hovered-color: #c84747;
+  position: relative;
+  display: flex;
+  font-weight: 600;
+  font-size: 20px;
+  gap: 0.5rem;
+  align-items: center;
+  justify-content: center; /* Center items horizontally */
+}
+.schedule-button-prev {
+    --primary-color: #111;
+    --hovered-color: #c84747;
+    position: relative;
+    display: flex;
+    font-weight: 600;
+    font-size: 20px;
+    gap: 0.5rem;
+    align-items: center;
+    justify-content: center; /* Center items horizontally */
+  }

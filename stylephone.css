@@ -1,0 +1,569 @@
+@media (max-width: 768px) {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  body {
+    padding-top: 150px;
+    font-family: 'Times New Roman', Times, serif;
+    color: #333;
+    background-color: #ffffff;
+    overflow-x: hidden;
+  }
+  :root {
+    --primary-color: #8d6800;
+    --secondary-color: #ffffff;
+  }
+  header {
+  background: linear-gradient(to left, #ffffff 10%, rgb(150, 150, 150) 80%);
+  color: white;
+  padding: 20px 40px;
+    padding-left: 20px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  }
+  .nav-bar{
+    margin-left: 0; /* Ensure nav-bar is closer to the logo */
+    padding-left: 0;
+    font-size: 11px;
+  }
+  .logo img {
+    height: 60px;
+    margin-right: 0px;
+    /* If there's any margin or padding pushing it to the right, reduce it here. */
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    margin-right: 0px;
+    margin-left: 0; /* Adjust or add this to reduce space to the left edge if needed. */
+  }
+  
+
+  
+  .logo-text {
+    color: var(--primary-color);
+    margin-left: 0px; /* Reduced from 50px to bring the text closer to the logo. */
+    font-size: 0px;
+    font-weight: bold;
+    display: none;
+    align-items: center;
+    margin-right: 0px;
+  }
+  
+  .nav-bar ul {
+    list-style: none;
+    display: flex;
+    margin-left: 0; /* Adjust this as needed */
+    padding-left: 0; /* Adjust if your ul has padding */
+  }
+  .nav-bar ul li {
+    margin-left: 10px;
+  }
+  .nav-bar ul li a {
+    color: rgb(32, 32, 32);
+    text-decoration: none;
+    font-weight: bold;
+    margin-left: 8px;
+  }
+  .nav-bar ul li a:hover, .nav-bar ul li a.active {
+    color: var(--primary-color);
+  }
+  .separator {
+    position: absolute;
+    top: 85px;
+    left: 2.5%;
+    width: 95%;
+    background-color: var(--primary-color);
+    height: 4px;
+  }
+  .container {
+    max-width: 768px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .content h2 {
+    margin-top: 90px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    
+    
+  }
+  .container h2 {
+    margin-top: 90px;
+    color: var(--primary-color);
+    margin-bottom: 40px;
+    font-size: xx-large;
+  }
+  
+  .services-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 40px 0;
+  }
+  .services-logo {
+  flex-basis: 25%;
+  
+  margin-left: 1%;
+  width: 65vw; /* Logo width relative to the viewport width */
+  max-height: 65vw; /* Logo height scales with the viewport width */
+  }
+  
+  .text-section {
+    color: rgb(32, 32, 32);
+    font-size: xxx-large;
+    font-weight: bold;
+    flex-basis: 56%;
+    padding: 0 20px;
+    line-height: 100%;
+    
+  }
+  .text-section p {
+  margin-bottom: 40px; /* Increase the bottom margin to separate paragraphs */
+  /* Other styles like color, font-size, etc., if necessary */
+  }
+  .picture-right {
+    flex-basis: 25%;
+  
+  width: 15vw; /* Logo width relative to the viewport width */
+  max-height: 40vw; /* Logo height scales with the viewport width */
+    width: 10%;
+  
+    margin-left: 2%;
+    margin-right: 10%;
+  }
+  
+  
+  @media (max-width: 768px) {
+    .nav-link-desktop {
+      display: none;
+    }
+    .nav-link-mobile {
+ 
+      display: block;
+      top: 0;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .info-boxes {
+    display: flex;
+    flex-direction: column; /* Align items vertically */
+    justify-content: center;
+    margin-top: 40px;
+    background-color: var(--secondary-color);
+  }
+  
+  .info-box-wrapper {
+    width: 100%; /* Ensure each wrapper takes full width */
+  }
+  
+  .info-box {
+    margin: 10px 0; /* Adjusted for vertical margin */
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    border-top: 7px solid var(--primary-color);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  footer {
+    background-color: var(--secondary-color);
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+  }
+  @media (max-width: 768px) {
+    .services-section {
+        flex-direction: column;
+    }
+    .services-logo, .text-section, .picture-right {
+        
+        flex-basis: 100%;
+        margin: 10px 0;
+    }
+  }
+  .introduction-section {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-around; /* Space out the items */
+  padding: 40px 0; /* Add padding */
+  }
+  
+  .introduction-section2 {
+  display: flex; /* Use flexbox for layout */
+  align-items: center; /* Center items vertically */
+  justify-content: space-around; /* Space out the items */
+  margin-bottom: 20px;
+  }
+  
+  .introduction-section .left-image,
+  .introduction-section .right-image {
+  flex-basis: 20%; /* Take up 20% of the flex container */
+  text-align: center; /* Center the images if they are smaller than the flex-basis */
+  }
+  
+  .introduction-section .content {
+  flex-basis: 60%; /* Take up 60% of the flex container */
+  padding: 0 20px; /* Add some padding on the sides */
+  }
+  .service-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Centers the boxes horizontally */
+  justify-content: center; /* Centers the boxes vertically if there's enough vertical space */
+  margin-top: 0px;
+  }
+  
+  .service-box {
+  display: flex; /* Makes the container a flexbox */
+  flex-direction: column; /* Aligns children vertically */
+  justify-content: center; /* Centers items vertically in the box */
+  align-items: center; /* Centers items horizontally in the box */
+  width: 20%; /* Set the desired width for the boxes */
+  margin: 10px 0; /* Add margin above and below each box */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  line-height: 120%;
+  font-size: 140%;
+  margin-bottom: 3%;
+  margin-top: 3%;
+  font-weight: bold;
+  
+  }
+  
+  .service-box {
+  border-left: 8px solid var(--primary-color); /* Left border for style */
+  }
+  
+  .service-box2 {
+    padding: 20px 10px 20px 20px;
+  display: flex; /* Keeps the container as flexbox */
+  flex-direction: column; /* Keeps children aligned vertically */
+  justify-content: center; /* Centers items vertically in the box */
+  align-items: flex-end; /* Aligns items to the right */
+  width: 90%; /* Set the desired width for the boxes */
+  margin: 10px 0; /* Add margin above and below each box */
+  padding: 20px;
+  background-color: #fff; /* White background */
+  line-height: 160%;
+  font-size: 135%;
+  margin-left: auto;
+  margin-right: 0;
+  font-weight: bold;
+  letter-spacing: 0.004em;
+  border-right: 8px solid var(--primary-color); /* Right border for style */
+  text-align: left;
+
+}
+  
+  
+  .service-box h2 {
+  margin-bottom: 15px; /* Space below the heading */
+  color: var(--primary-color); /* Primary theme color for headings */
+  font-size: 1.25em; /* Slightly larger font size for the heading */
+  }
+  
+  .service-box p {
+  color: #333; /* Dark color for text */
+  line-height: 1.6; /* Spacing for readability */
+  }
+  
+  @media (max-width: 768px) {
+  .service-box {
+  width: 95%; /* Adjust width for smaller screens */
+  }
+  }
+  .services-section {
+  position: relative;
+  z-index: 2; /* Ensures content is above the words */
+  /* Ensure this container has dimensions */
+  min-height: 400px; /* Example height, adjust as needed */
+  }
+  
+  #wordContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1; /* Below .services-section content but above background */
+  }
+  
+  .word {
+  position: absolute;
+  opacity: 0; /* Initially hidden, shown via JS */
+  transition: opacity 0.05s ease-in-out;
+  color: #e49c00; /* Make sure this is visible against your background */
+  font-size: 20px; /* Example size, adjust as needed */
+  font-variant: small-caps;
+  }
+  .color1 {
+  color: #4d4d4d; /* Example color, adjust as needed */
+  }
+  
+  .color2 {
+  color: #8d6800; /* Example color, adjust as needed */
+  }
+  .contact-container {
+  text-align: center;
+  padding: 20px;
+  }
+  
+  #contact-title {
+  margin-top: 15%;
+  
+  margin-bottom: 20%; /* Adjust the space between title and form */
+  font-size: xx-large; /* Adjust the font size as needed */
+  color: #8d6800; /* Primary color */
+  letter-spacing: 0.01em; /* Adds space between characters */
+  }
+  
+  
+  .form-container {
+  display: flex;
+  justify-content: space-evenly; /* Distributes space evenly around items */
+  align-items: flex-start; /* Aligns items to the start of the container */
+  flex-wrap: wrap; /* Allows the items to wrap onto the next line if needed */
+  }
+  
+  .image-container {
+  flex-basis: 18%; /* Takes up the specified width */
+  display: flex;
+  flex-direction: column; /* Stack the image and caption vertically */
+  align-items: center; /* Center the items horizontally */
+  }
+  
+  .picture-right {
+  width: auto; /* The image will take up the full width of the .image-container */
+  height: auto ; /* Maintain aspect ratio */
+  margin-bottom: 10px; /* Space between the image and caption */
+  }
+  
+  .image-caption {
+  text-align: center; /* Centers the caption text */
+  font-size: 18px; /* Example font size, adjust as needed */
+  color: #333; /* Example text color, adjust as needed */
+  }
+  
+  
+  #contact-form {
+  width: 100%;
+  max-width: 35%; /* Set a max-width for the form if you want it wider */
+  }
+  
+  #company-section {
+  display: flex;
+  flex-direction: column; /* Stack children vertically */
+  justify-content: center; /* Center vertically in the container */
+  align-items: center; /* Center horizontally in the container */
+  
+  text-align: center; /* Ensure text aligns center */
+  }
+  
+  #company-title {
+  
+  margin-top: 10%;
+  font-size: xxx-large; /* Large font size for emphasis */
+  color: #8d6800; /* Theme color for the text */
+  letter-spacing: 0.1em; /* Space between characters */
+  }
+  
+  
+  .input-group {
+  margin-bottom: 15px;
+  display: flex;
+  flex-direction: column;
+  }
+  
+  .input-group input,
+  .input-group textarea {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  height: 50px;
+  
+  margin-bottom: 5px; /* Adds space between inputs */
+  }
+  
+  .input-group textarea {
+  height: auto; /* Reset height for textarea */
+  min-height: 150px;
+  resize: vertical;
+  }
+  
+  #submit {
+  background-color: white;
+  color: #8d6800;
+  border: 2px solid #8d6800;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: background-color 0.2s, color 0.2s;
+  }
+  
+  #submit:hover {
+  background-color: #8d6800;
+  color: white;
+  }
+  
+  
+  /* Adjust the max-width for responsiveness */
+  @media (max-width: 768px) {
+  .form-container {
+  flex-direction: column;
+  align-items: center;
+  }
+  
+  #contact-form {
+  max-width: none;
+  }
+  }
+  
+  
+  /* Initial state: just outside the viewport */
+  .logoright, .logoleft {
+    display: none;
+  position: absolute;
+  width: 30%;
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+  opacity: 0; /* Initially invisible for a smoother entry */
+  }
+  
+  .logoright {
+  top: 117%;
+  transform: translateX(200%); /* Start completely outside to the right */
+  }
+  
+  .logoleft {
+  top: 243%;
+  transform: translateX(-200%); /* Start completely outside to the left */
+  }
+  
+  /* Adjusted target state: partially visible */
+  .logoright.in-view {
+  opacity: 1;
+  transform: translateX(160%); /* Adjust to control how far it comes into the screen */
+  }
+  
+  .logoleft.in-view {
+  opacity: 1;
+  transform: translateX(-150%); /* Adjust to control how far it comes into the screen */
+  }
+  
+  
+  
+  
+  
+  .container {
+  display: flex;
+  justify-content: center; /* This will horizontally center all direct children */
+  align-items: center; /* This will vertically center all direct children */
+  flex-direction: column; /* This will stack children vertically */
+  text-align: center; /* This ensures the text within the container is centered */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  flex-wrap: wrap;
+  }
+  
+  #company {
+  width: 100%; /* Ensures the .service-container takes full width of its container */
+  }
+  #company {
+  scroll-margin-top: 150px; /* This value should match or exceed your fixed header's height */
+  /* ... other styles ... */
+  }
+  
+  
+  
+  #company, #szolgáltatások {
+  /* These IDs should be on the section containers */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: -100px; /* Height of fixed header */
+  padding-top: 100px; /* Height of fixed header */
+  }
+  
+  /* Any additional specific styles for these sections */
+  
+  #container {
+  scroll-margin-top: 150px; /* This value should match or exceed your fixed header's height */
+  /* ... other styles ... */
+  }
+  
+  
+  #company-title {
+  /* Centering the title within #company */
+  margin: 0;
+  padding-top: 20px;
+  font-size: xxx-large;
+  color: var(--primary-color);
+  text-align: center; /* Ensures the title is centered */
+  letter-spacing: 0.1em; /* Adjust as needed */
+  }
+  
+  
+  .popup {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  padding: 20px;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+  }
+  
+  
+}
